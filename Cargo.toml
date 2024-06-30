@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 num-complex = "0.4"
 png = "0.17.13"
+rayon = "1.10.0"
