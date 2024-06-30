@@ -1,7 +1,7 @@
 use std::fs::File;
 use num_complex::Complex;
 use png::{BitDepth, ColorType, Encoder};
-use rayon::iter::{ParallelBridge, ParallelIterator};
+use rayon::iter::{IntoParallelIterator, ParallelIterator};
 use super::{WriteResult, Size};
 
 pub struct Image {
@@ -17,21 +17,18 @@ impl Image {
 		upper_left: Point,
 		lower_right: Point,
 	) -> Image {
-		let mut pixels = vec![0; size.area()];
+		let pixels: Vec<u8> = (0..size.area()).into_par_iter().map(|i| {
+			let x = i % size.width;
+			let y = i / size.width;
 
-		let chunks = pixels.chunks_mut(size.width);
+			let point = size.calc_point((x, y), upper_left, lower_right);
+			let escape_time = escape_time(point);
 
-		chunks.enumerate().par_bridge().for_each(|(y, row)| {
-			for (x, pixel) in row.iter_mut().enumerate() {
-				let point = size.calc_point((x, y), upper_left, lower_right);
-				let escape_time = escape_time(point);
-
-				*pixel = match escape_time {
-					Some(i) => ((i * u8::MAX as usize) / ITERATIONS) as u8,
-					None => 0
-				};
+			match escape_time {
+				Some(i) => ((i * u8::MAX as usize) / ITERATIONS) as u8,
+				None => 0
 			}
-		});
+		}).collect();
 
 		Image { size, pixels }
 	}
