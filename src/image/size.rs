@@ -16,7 +16,7 @@ impl Size {
 	}
 
 	pub fn calc_point(
-		&self, pixel: (usize, usize),
+		self, pixel: (usize, usize),
 		upper_left: Complex<f64>, 
 		lower_right: Complex<f64>
 	) -> Complex<f64> {
