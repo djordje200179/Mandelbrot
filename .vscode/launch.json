@@ -1,0 +1,249 @@
+{
+	"configurations": [
+		{
+			"type": "cppvsdbg",
+			"request": "launch",
+			"name": "run mandelbrot",
+			"program": "E:\\Exercises\\Mandelbrot\\target\\debug\\mandelbrot.exe",
+			"args": [],
+			"cwd": "E:\\Exercises\\Mandelbrot",
+			"environment": [
+				{
+					"name": "RUST_BACKTRACE",
+					"value": "short"
+				},
+				{
+					"name": "ALLUSERSPROFILE",
+					"value": "C:\\ProgramData"
+				},
+				{
+					"name": "APPDATA",
+					"value": "C:\\Users\\Djordje\\AppData\\Roaming"
+				},
+				{
+					"name": "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL",
+					"value": "1"
+				},
+				{
+					"name": "CHROME_CRASHPAD_PIPE_NAME",
+					"value": "\\\\.\\pipe\\crashpad_54312_MFBWFGTBCCRNSSJH"
+				},
+				{
+					"name": "COMPUTERNAME",
+					"value": "DJORDJE-LAPTOP"
+				},
+				{
+					"name": "ComSpec",
+					"value": "C:\\WINDOWS\\system32\\cmd.exe"
+				},
+				{
+					"name": "CommonProgramFiles",
+					"value": "C:\\Program Files\\Common Files"
+				},
+				{
+					"name": "CommonProgramFiles(x86)",
+					"value": "C:\\Program Files (x86)\\Common Files"
+				},
+				{
+					"name": "CommonProgramW6432",
+					"value": "C:\\Program Files\\Common Files"
+				},
+				{
+					"name": "DriverData",
+					"value": "C:\\Windows\\System32\\Drivers\\DriverData"
+				},
+				{
+					"name": "EFC_89188",
+					"value": "1"
+				},
+				{
+					"name": "ELECTRON_RUN_AS_NODE",
+					"value": "1"
+				},
+				{
+					"name": "HOME",
+					"value": "C:\\Users\\Djordje"
+				},
+				{
+					"name": "HOMEDRIVE",
+					"value": "C:"
+				},
+				{
+					"name": "HOMEPATH",
+					"value": "\\Users\\Djordje"
+				},
+				{
+					"name": "LOCALAPPDATA",
+					"value": "C:\\Users\\Djordje\\AppData\\Local"
+				},
+				{
+					"name": "LOGONSERVER",
+					"value": "\\\\DJORDJE-LAPTOP"
+				},
+				{
+					"name": "NUMBER_OF_PROCESSORS",
+					"value": "20"
+				},
+				{
+					"name": "ORIGINAL_XDG_CURRENT_DESKTOP",
+					"value": "undefined"
+				},
+				{
+					"name": "OS",
+					"value": "Windows_NT"
+				},
+				{
+					"name": "OneDrive",
+					"value": "C:\\Users\\Djordje\\OneDrive"
+				},
+				{
+					"name": "OneDriveConsumer",
+					"value": "C:\\Users\\Djordje\\OneDrive"
+				},
+				{
+					"name": "PATHEXT",
+					"value": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW"
+				},
+				{
+					"name": "PROCESSOR_ARCHITECTURE",
+					"value": "AMD64"
+				},
+				{
+					"name": "PROCESSOR_IDENTIFIER",
+					"value": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+				},
+				{
+					"name": "PROCESSOR_LEVEL",
+					"value": "6"
+				},
+				{
+					"name": "PROCESSOR_REVISION",
+					"value": "ba02"
+				},
+				{
+					"name": "PSModulePath",
+					"value": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules"
+				},
+				{
+					"name": "PUBLIC",
+					"value": "C:\\Users\\Public"
+				},
+				{
+					"name": "Path",
+					"value": "C:\\Program Files\\Python\\Scripts\\;C:\\Program Files\\Python\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Calibre2\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\dotnet\\;C:\\Users\\Djordje\\.cargo\\bin;C:\\Users\\Djordje\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Djordje\\.dotnet\\tools"
+				},
+				{
+					"name": "ProgramData",
+					"value": "C:\\ProgramData"
+				},
+				{
+					"name": "ProgramFiles",
+					"value": "C:\\Program Files"
+				},
+				{
+					"name": "ProgramFiles(x86)",
+					"value": "C:\\Program Files (x86)"
+				},
+				{
+					"name": "ProgramW6432",
+					"value": "C:\\Program Files"
+				},
+				{
+					"name": "QSYS_ROOTDIR",
+					"value": "C:\\Intel\\Quartus\\quartus\\sopc_builder\\bin"
+				},
+				{
+					"name": "QUARTUS_ROOTDIR",
+					"value": "C:\\Intel\\Quartus\\qprogrammer"
+				},
+				{
+					"name": "SESSIONNAME",
+					"value": "Console"
+				},
+				{
+					"name": "SOPC_KIT_NIOS2",
+					"value": "C:\\Intel\\Quartus\\nios2eds"
+				},
+				{
+					"name": "SystemDrive",
+					"value": "C:"
+				},
+				{
+					"name": "SystemRoot",
+					"value": "C:\\WINDOWS"
+				},
+				{
+					"name": "TEMP",
+					"value": "C:\\Users\\Djordje\\AppData\\Local\\Temp"
+				},
+				{
+					"name": "TMP",
+					"value": "C:\\Users\\Djordje\\AppData\\Local\\Temp"
+				},
+				{
+					"name": "USERDOMAIN",
+					"value": "DJORDJE-LAPTOP"
+				},
+				{
+					"name": "USERDOMAIN_ROAMINGPROFILE",
+					"value": "DJORDJE-LAPTOP"
+				},
+				{
+					"name": "USERNAME",
+					"value": "Djordje"
+				},
+				{
+					"name": "USERPROFILE",
+					"value": "C:\\Users\\Djordje"
+				},
+				{
+					"name": "VSCODE_AMD_ENTRYPOINT",
+					"value": "vs/workbench/api/node/extensionHostProcess"
+				},
+				{
+					"name": "VSCODE_CODE_CACHE_PATH",
+					"value": "C:\\Users\\Djordje\\AppData\\Roaming\\Code\\CachedData\\5437499feb04f7a586f677b155b039bc2b3669eb"
+				},
+				{
+					"name": "VSCODE_CRASH_REPORTER_PROCESS_TYPE",
+					"value": "extensionHost"
+				},
+				{
+					"name": "VSCODE_CWD",
+					"value": "C:\\Program Files\\Microsoft VS Code"
+				},
+				{
+					"name": "VSCODE_HANDLES_UNCAUGHT_ERRORS",
+					"value": "true"
+				},
+				{
+					"name": "VSCODE_IPC_HOOK",
+					"value": "\\\\.\\pipe\\2fbd75c9-1.90.2-main-sock"
+				},
+				{
+					"name": "VSCODE_L10N_BUNDLE_LOCATION",
+					"value": ""
+				},
+				{
+					"name": "VSCODE_NLS_CONFIG",
+					"value": "{\"locale\":\"en-us\",\"osLocale\":\"sr-latn-ba\",\"availableLanguages\":{},\"_languagePackSupport\":true}"
+				},
+				{
+					"name": "VSCODE_PID",
+					"value": "54312"
+				},
+				{
+					"name": "ZES_ENABLE_SYSMAN",
+					"value": "1"
+				},
+				{
+					"name": "windir",
+					"value": "C:\\WINDOWS"
+				}
+			],
+			"osx": {
+				"MIMode": "lldb"
+			}
+		}
+	]
+}
