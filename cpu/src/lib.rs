@@ -36,8 +36,8 @@ fn render(size: Size, upper_left: Complex<f32>, lower_right: Complex<f32>) -> Im
             let imaginary = upper_left.im - y as f32 * imaginary_step;
 
             for (x, pixel) in row.iter_mut().enumerate() {
-                let real = upper_left.re + x as f32 * real_step;
-                *pixel = pixel_intensity(escape_time(real, imaginary));
+                let point = Complex::new(upper_left.re + x as f32 * real_step, imaginary);
+                *pixel = pixel_intensity(escape_time(point));
             }
         });
 
@@ -48,20 +48,15 @@ fn pixel_intensity(escape_time: Option<u32>) -> u8 {
     escape_time.map(|iterations| iterations as u8).unwrap_or(0)
 }
 
-fn escape_time(start_real: f32, start_imaginary: f32) -> Option<u32> {
-    let mut current_real = start_real;
-    let mut current_imaginary = start_imaginary;
+fn escape_time(start_point: Complex<f32>) -> Option<u32> {
+    let mut current_point = start_point;
 
     for iteration in 0..MAX_ITERATIONS {
-        let real_squared = current_real * current_real;
-        let imaginary_squared = current_imaginary * current_imaginary;
-
-        if real_squared + imaginary_squared > ESCAPE_RADIUS_SQUARED {
+        if current_point.norm_sqr() > ESCAPE_RADIUS_SQUARED {
             return Some(iteration);
         }
 
-        current_imaginary = 2.0 * current_real * current_imaginary + start_imaginary;
-        current_real = real_squared - imaginary_squared + start_real;
+        current_point = current_point * current_point + start_point;
     }
 
     None
