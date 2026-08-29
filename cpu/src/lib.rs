@@ -1,11 +1,13 @@
 mod parallel;
 mod sequential;
+mod simd;
 
 use mandelbrot_core::MAX_ITERATIONS;
 use num_complex::Complex;
 
 pub use parallel::ParallelRenderer;
 pub use sequential::SequentialRenderer;
+pub use simd::SimdRenderer;
 
 const ESCAPE_RADIUS_SQUARED: f32 = 4.0;
 

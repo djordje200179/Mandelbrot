@@ -34,6 +34,21 @@
 		{
 			"type": "cppvsdbg",
 			"request": "launch",
+			"name": "Run Mandelbrot SIMD CPU",
+			"program": "${workspaceFolder}\\target\\release\\mandelbrot-cpu-simd.exe",
+			"preLaunchTask": "Build Mandelbrot SIMD CPU",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"environment": [
+				{
+					"name": "RUST_BACKTRACE",
+					"value": "short"
+				}
+			]
+		},
+		{
+			"type": "cppvsdbg",
+			"request": "launch",
 			"name": "Run Mandelbrot GPU Benchmark",
 			"program": "${workspaceFolder}\\target\\release\\mandelbrot-gpu-benchmark.exe",
 			"preLaunchTask": "Build Mandelbrot GPU",

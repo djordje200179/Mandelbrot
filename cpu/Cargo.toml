@@ -8,6 +8,7 @@ mandelbrot-core = { path = "../core" }
 num-complex = "0.4"
 rayon = "1.10.0"
 tokio = { version = "1", features = ["macros", "rt"] }
+wide = "1.7.0"
 
 [[bin]]
 name = "mandelbrot-cpu-parallel"
@@ -16,3 +17,7 @@ path = "src/bin/parallel.rs"
 [[bin]]
 name = "mandelbrot-cpu-sequential"
 path = "src/bin/sequential.rs"
+
+[[bin]]
+name = "mandelbrot-cpu-simd"
+path = "src/bin/simd.rs"

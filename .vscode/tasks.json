@@ -50,6 +50,30 @@
 			"group": "build"
 		},
 		{
+			"label": "Build Mandelbrot SIMD CPU",
+			"type": "process",
+			"command": "cargo",
+			"args": [
+				"build",
+				"--release",
+				"-p",
+				"mandelbrot-cpu",
+				"--bin",
+				"mandelbrot-cpu-simd"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"CARGO_TARGET_DIR": "${workspaceFolder}\\target",
+					"RUSTFLAGS": "-C target-cpu=native"
+				}
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
+		},
+		{
 			"label": "Build Mandelbrot GPU",
 			"type": "process",
 			"command": "cargo",
