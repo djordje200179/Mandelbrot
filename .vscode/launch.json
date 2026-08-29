@@ -4,9 +4,24 @@
 		{
 			"type": "cppvsdbg",
 			"request": "launch",
-			"name": "Run Mandelbrot CPU Benchmark",
-			"program": "${workspaceFolder}\\target\\release\\mandelbrot-cpu-benchmark.exe",
-			"preLaunchTask": "Build Mandelbrot CPU",
+			"name": "Run Mandelbrot Parallel CPU",
+			"program": "${workspaceFolder}\\target\\release\\mandelbrot-cpu-parallel.exe",
+			"preLaunchTask": "Build Mandelbrot Parallel CPU",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"environment": [
+				{
+					"name": "RUST_BACKTRACE",
+					"value": "short"
+				}
+			]
+		},
+		{
+			"type": "cppvsdbg",
+			"request": "launch",
+			"name": "Run Mandelbrot Sequential CPU",
+			"program": "${workspaceFolder}\\target\\release\\mandelbrot-cpu-sequential.exe",
+			"preLaunchTask": "Build Mandelbrot Sequential CPU",
 			"args": [],
 			"cwd": "${workspaceFolder}",
 			"environment": [

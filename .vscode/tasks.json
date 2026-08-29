@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Build Mandelbrot CPU",
+			"label": "Build Mandelbrot Parallel CPU",
 			"type": "process",
 			"command": "cargo",
 			"args": [
@@ -11,7 +11,31 @@
 				"-p",
 				"mandelbrot-cpu",
 				"--bin",
-				"mandelbrot-cpu-benchmark"
+				"mandelbrot-cpu-parallel"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"CARGO_TARGET_DIR": "${workspaceFolder}\\target",
+					"RUSTFLAGS": "-C target-cpu=native"
+				}
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Mandelbrot Sequential CPU",
+			"type": "process",
+			"command": "cargo",
+			"args": [
+				"build",
+				"--release",
+				"-p",
+				"mandelbrot-cpu",
+				"--bin",
+				"mandelbrot-cpu-sequential"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}",

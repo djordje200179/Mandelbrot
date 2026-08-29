@@ -10,5 +10,9 @@ rayon = "1.10.0"
 tokio = { version = "1", features = ["macros", "rt"] }
 
 [[bin]]
-name = "mandelbrot-cpu-benchmark"
-path = "src/bin/benchmark.rs"
+name = "mandelbrot-cpu-parallel"
+path = "src/bin/parallel.rs"
+
+[[bin]]
+name = "mandelbrot-cpu-sequential"
+path = "src/bin/sequential.rs"

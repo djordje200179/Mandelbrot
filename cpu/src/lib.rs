@@ -1,47 +1,27 @@
-use mandelbrot_core::{Image, Renderer, Size, MAX_ITERATIONS};
+mod parallel;
+mod sequential;
+
+use mandelbrot_core::MAX_ITERATIONS;
 use num_complex::Complex;
-use rayon::prelude::*;
-use std::convert::Infallible;
+
+pub use parallel::ParallelRenderer;
+pub use sequential::SequentialRenderer;
 
 const ESCAPE_RADIUS_SQUARED: f32 = 4.0;
 
-pub struct CpuRenderer;
+pub(crate) fn render_row(
+    row: &mut [u8],
+    y: usize,
+    upper_left: Complex<f32>,
+    real_step: f32,
+    imaginary_step: f32,
+) {
+    let imaginary = upper_left.im - y as f32 * imaginary_step;
 
-impl Renderer for CpuRenderer {
-    type Error = Infallible;
-
-    async fn render(
-        &self,
-        size: Size,
-        upper_left: Complex<f32>,
-        lower_right: Complex<f32>,
-    ) -> Result<Image, Self::Error> {
-        Ok(render(size, upper_left, lower_right))
+    for (x, pixel) in row.iter_mut().enumerate() {
+        let point = Complex::new(upper_left.re + x as f32 * real_step, imaginary);
+        *pixel = pixel_intensity(escape_time(point));
     }
-}
-
-fn render(size: Size, upper_left: Complex<f32>, lower_right: Complex<f32>) -> Image {
-    let mut pixels = vec![0; size.area()];
-    if size.width == 0 || size.height == 0 {
-        return Image::from_pixels(size, pixels);
-    }
-
-    let real_step = (lower_right.re - upper_left.re) / size.width as f32;
-    let imaginary_step = (upper_left.im - lower_right.im) / size.height as f32;
-
-    pixels
-        .par_chunks_mut(size.width)
-        .enumerate()
-        .for_each(|(y, row)| {
-            let imaginary = upper_left.im - y as f32 * imaginary_step;
-
-            for (x, pixel) in row.iter_mut().enumerate() {
-                let point = Complex::new(upper_left.re + x as f32 * real_step, imaginary);
-                *pixel = pixel_intensity(escape_time(point));
-            }
-        });
-
-    Image::from_pixels(size, pixels)
 }
 
 fn pixel_intensity(escape_time: Option<u32>) -> u8 {
