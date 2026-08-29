@@ -1,0 +1,52 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Mandelbrot CPU",
+			"type": "process",
+			"command": "cargo",
+			"args": [
+				"build",
+				"--release",
+				"-p",
+				"mandelbrot-cpu",
+				"--bin",
+				"mandelbrot-cpu-benchmark"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"CARGO_TARGET_DIR": "${workspaceFolder}\\target",
+					"RUSTFLAGS": "-C target-cpu=native"
+				}
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Mandelbrot GPU",
+			"type": "process",
+			"command": "cargo",
+			"args": [
+				"build",
+				"--release",
+				"-p",
+				"mandelbrot-gpu",
+				"--bin",
+				"mandelbrot-gpu-benchmark"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"CARGO_TARGET_DIR": "${workspaceFolder}\\target"
+				}
+			},
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
+		}
+	]
+}

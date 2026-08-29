@@ -1,0 +1,9 @@
+[package]
+name = "mandelbrot-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+num-complex = "0.4"
+png = "0.17.13"
+thiserror = "2"

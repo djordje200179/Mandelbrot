@@ -1,0 +1,14 @@
+[package]
+name = "mandelbrot-cpu"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+mandelbrot-core = { path = "../core" }
+num-complex = "0.4"
+rayon = "1.10.0"
+tokio = { version = "1", features = ["macros", "rt"] }
+
+[[bin]]
+name = "mandelbrot-cpu-benchmark"
+path = "src/bin/benchmark.rs"

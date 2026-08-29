@@ -1,0 +1,19 @@
+[package]
+name = "mandelbrot-gpu"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+bytemuck = { version = "1", features = ["derive"] }
+mandelbrot-core = { path = "../core" }
+num-complex = "0.4"
+thiserror = "2"
+tokio = { version = "1", features = ["macros", "rt"] }
+wgpu = "26"
+
+[build-dependencies]
+wgsl_bindgen = { version = "=0.21.3", default-features = false }
+
+[[bin]]
+name = "mandelbrot-gpu-benchmark"
+path = "src/bin/benchmark.rs"
